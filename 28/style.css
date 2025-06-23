@@ -1,0 +1,133 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+nav{
+    width: 100%;
+}
+nav ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav a{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding: 10px 20px;
+    color: gray;
+    text-decoration: none;
+}
+nav a:hover{
+    border: 1px solid lightgray;
+}
+#menu-toggle{
+    position: absolute;top: 5px;right: 5px;
+    display: none;   /* デフォルトは非表示 */
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    z-index: 5;
+}
+#menu-toggle::before{
+    content: '☰';
+    font-size: 30px;
+}
+#menu-toggle.open::before{
+    content: '✕';
+    color: #FFFFFF;
+}
+@media (max-width: 655px) {
+  /* メニューボタンを表示 */
+    #menu-toggle{
+        display: block;
+    }
+    nav{
+        display: none;
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 50px 0;
+        background-color: #606F99;
+    }
+    nav.open{
+        display: block;
+        right: 0;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    nav a{
+        margin: 0;
+        color: #FFFFFF;
+    }
+    nav a:hover{
+        background-color: #FFFFFF;
+        color: #606F99;
+        border: none;
+    }
+}
+#logo img{
+    height: 50px;
+}
+.content-div{
+    margin: 20px 70px;
+}
+.content-div h1{
+    font-size: clamp(1.25rem, 0.341rem + 4.55vw, 3.75rem);
+    border-bottom: 1px solid gray;
+}
+.item-div{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.item-div img{
+    width: 400px;
+}
+.img-block{
+    display: flex;
+    flex-direction: column;
+    color: gray;
+}
+.text-div{
+    display: flex;
+    flex-direction: column;
+}
+.link-box a{
+    color: #606F99;    
+}
+@media (max-width: 700px) {
+    .item-div {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 535px) {
+    .item-div img{
+        width: 350px;
+    }
+}
+footer{
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: #606F99;
+    color: #FFFFFF;
+    text-align: center;
+}
+footer a{
+    color: #FFFFFF;
+}
