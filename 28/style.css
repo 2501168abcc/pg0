@@ -117,7 +117,18 @@ nav a:hover{
     width: 100px;
     margin-left: 10px;
 }
-@media (max-width: 700px) {
+@media (min-width: 750px) and (max-width: 850px) {
+    #playlist {
+        flex-direction: column;
+    }
+    #playlist img{
+        order: 1;
+    }
+    #playlist .text-div{
+        order: 2;
+    }
+}
+@media (max-width: 750px) {
     .item-div {
         flex-direction: column;
         align-items: center;
